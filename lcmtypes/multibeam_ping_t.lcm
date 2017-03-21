@@ -1,0 +1,30 @@
+package hauv;
+
+struct multibeam_ping_t
+{
+  int64_t time;
+
+  string sonar_id;
+
+  double origin[3];	 // sonar position [m] (global)
+  double orientation[4]; // sonar orientation [] (global)
+  	 		 // w + xi + yj + zk (eigen conv)
+
+
+  double hfov;
+  double vfov;
+  int32_t num_beams;
+  double beam_hfov;
+  double beam_vfov;
+
+
+  double range_start; //[m]
+  double range_stop;  //[m]
+  int32_t num_bins;
+
+
+  int32_t width;
+  int32_t height;
+  int32_t size;
+  int16_t image[size];
+}

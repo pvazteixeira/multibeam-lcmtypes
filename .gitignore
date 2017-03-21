@@ -1,0 +1,8 @@
+# build directory
+pod-build
+
+# lcm bindings
+lcmtypes/c/
+lcmtypes/cpp/
+lcmtypes/java/
+lcmtypes/python/

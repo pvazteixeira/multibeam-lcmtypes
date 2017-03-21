@@ -1,0 +1,23 @@
+package hauv;
+
+struct  sonar_range_t
+{
+  int64_t timestamp;
+
+  double origin[3];       // position of the beam's focal point (global)
+  double orientation[4];  // the orientation of the beam's main lobe (global)
+
+  double range;           // the actual range measurement (use -1 if empty) [m]
+  double max_range;       // the maximum range for the beam [m]
+
+  double intensity;
+  double max_intensity;
+
+
+
+  double endpoint_local[3];      // the range measurement, mapped to a point (sonar frame)
+  double endpoint_global[3];     // the range measurement, mapped to a point (global)
+
+  double hfov;            // the beam's horizontal beamwidth [radians]
+  double vfov;            // the beam's vertical beamwidth [radians]
+}

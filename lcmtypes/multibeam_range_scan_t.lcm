@@ -1,0 +1,14 @@
+package hauv;
+
+struct sonar_scan_t
+{
+  int64_t timestamp;
+
+  int32_t num_beams;
+
+  sonar_range_t beams[num_beams];   
+
+  double origin[3];       // vehicle position    (global)
+  double orientation[4];  // vehicle orientation (global)
+
+}
