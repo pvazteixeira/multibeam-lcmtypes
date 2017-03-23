@@ -1,23 +1,23 @@
-package hauv;
+package multibeam;
 
-struct  sonar_range_t
+// message for a single-beam range measurement
+struct  range_t
 {
-  int64_t timestamp;
+  int64_t time;
 
-  double origin[3];       // position of the beam's focal point (global)
-  double orientation[4];  // the orientation of the beam's main lobe (global)
-
+  //  beam measures along x
+  double origin[3];       // position of the beam's focal point ()
+  double orientation[4];  // the orientation of the beam's main lobe ()
   double range;           // the actual range measurement (use -1 if empty) [m]
+
+  // echo intensity data
+  double min_range;
   double max_range;       // the maximum range for the beam [m]
+  bool has_intensity;  // flag to check if the message carries echo intensity data
+  int32_t num_range_bins; // 
+  double intensity[num_range_bins]; // range 0-1
 
-  double intensity;
-  double max_intensity;
-
-
-
-  double endpoint_local[3];      // the range measurement, mapped to a point (sonar frame)
-  double endpoint_global[3];     // the range measurement, mapped to a point (global)
-
+  // beam data
   double hfov;            // the beam's horizontal beamwidth [radians]
   double vfov;            // the beam's vertical beamwidth [radians]
 }
