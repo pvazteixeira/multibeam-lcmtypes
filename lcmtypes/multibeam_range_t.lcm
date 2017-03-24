@@ -13,7 +13,7 @@ struct  range_t
   // echo intensity data
   double min_range;
   double max_range;       // the maximum range for the beam [m]
-  bool has_intensity;  // flag to check if the message carries echo intensity data
+  boolean has_intensity;  // flag to check if the message carries echo intensity data
   int32_t num_range_bins; // 
   double intensity[num_range_bins]; // range 0-1
 
