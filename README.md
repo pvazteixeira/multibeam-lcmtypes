@@ -2,6 +2,8 @@
 
 Collection of LCM types for multibeam sensors (e.g. DVL/LIDAR/RADAR/SONAR).
 
+** NOTE: these are NOT intended to be fixed types; they are very likely to change in order to support more sensors. **
+
 ## Dependencies
 * [LCM]()
 

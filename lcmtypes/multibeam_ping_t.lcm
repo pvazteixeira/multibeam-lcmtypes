@@ -17,8 +17,15 @@ struct ping_t
   double beam_hfov;
   double beam_vfov;
 
+  // double rx_gain; // dB
+  // double rx_gain; // dB
+
   double range_start; //[m]
   double range_stop;  //[m]
+  double focus;       //[m]
+
+  // double water_temperature; // deg C
+
   int32_t num_bins;
 
   int32_t width;
