@@ -1,4 +1,4 @@
-package multibeam;
+package multibeamlcm;
 
 struct ping_t
 {
@@ -18,10 +18,10 @@ struct ping_t
   double beam_vfov;
 
   // double rx_gain; // dB
-  // double rx_gain; // dB
+  // double tx_gain; // dB
 
-  double range_start; //[m]
-  double range_stop;  //[m]
+  double min_range; //[m]
+  double max_range;  //[m]
   double focus;       //[m]
 
   // double water_temperature; // deg C

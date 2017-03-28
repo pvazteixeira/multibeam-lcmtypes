@@ -1,4 +1,4 @@
-package multibeam;
+package multibeamlcm;
 
 // message for a collection of range measurements (e.g. from a multibeam sonar or LIDAR)
 // the pose reported in this message should be the instrument pose in the global frame
@@ -12,5 +12,4 @@ struct range_scan_t
 
   double origin[3];       // sensor position    (global)
   double orientation[4];  // sensor orientation (global)
-
 }
