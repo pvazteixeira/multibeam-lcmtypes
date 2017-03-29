@@ -4,9 +4,10 @@ package multibeamlcm;
 struct range_t {
   int64_t time;
 
+  // beam pose (usually wrt the sensor)
   //  beam measures along x
-  double origin[3];      // position of the beam's focal point ()
-  double orientation[4]; // the orientation of the beam's main lobe ()
+  double beam_origin[3];      // position of the beam's focal point ()
+  double beam_orientation[4]; // the orientation of the beam's main lobe ()
   double range;          // the actual range measurement (use -1 if empty) [m]
   // range is measured along x
   double strength;       // the echo intensity associated with the measurement

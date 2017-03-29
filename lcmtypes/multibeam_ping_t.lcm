@@ -6,9 +6,13 @@ struct ping_t
 
   string sonar_id;
 
-  double origin[3];	     // sensor position [m] (global)
-  double orientation[4]; // sensor orientation [] (global)
-                  	 		 // w + xi + yj + zk (eigen conv)
+  // platform/vehicle pose in the world frame
+  double platform_origin[3];
+  double platform_orientation[4]; // w + xi + yj + zk (eigen conv)
+
+  // sensor pose in the platform frame
+  double sensor_origin[3];	     
+  double sensor_orientation[4]; // w + xi + yj + zk (eigen conv) 
 
   double hfov;      // the horizontal (in-plane) field of view
   double vfov;      // the vertical (out-of-plane) field of view
