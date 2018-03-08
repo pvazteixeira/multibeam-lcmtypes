@@ -21,7 +21,7 @@ struct ping_t
   double beam_hfov;
   double beam_vfov;
 
-  // double rx_gain; // dB
+  double rx_gain; // dB
   // double tx_gain; // dB
 
   double min_range; //[m]
