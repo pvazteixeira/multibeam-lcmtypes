@@ -26,7 +26,7 @@
 #
 # ----
 # File: pods.cmake
-# Distributed with pods version: 12.11.14
+# Distributed with pods version: 17.02.11
 
 # pods_install_headers(<header1.h> ... DESTINATION <subdir_name>)
 # 
@@ -309,21 +309,21 @@ macro(pods_use_pkg_config_packages target)
     string(STRIP ${_pods_pkg_ldflags} _pods_pkg_ldflags)
     #    message("ldflags: ${_pods_pkg_ldflags}")
     include_directories(${_pods_pkg_include_flags})
-    target_link_libraries(${target} ${_pods_pkg_ldflags})
     
     # make the target depend on libraries that are cmake targets
     if (_pods_pkg_ldflags)
         string(REPLACE " " ";" _split_ldflags ${_pods_pkg_ldflags})
+        target_link_libraries(${target} ${_split_ldflags})
         foreach(__ldflag ${_split_ldflags})
-                string(REGEX REPLACE "^-l" "" __depend_target_name ${__ldflag})
-                if(TARGET "${__depend_target_name}")
-                    #message("---- ${target} depends on  ${libname}")
-                    add_dependencies(${target} ${__depend_target_name})
-                endif() 
+            string(REGEX REPLACE "^-l" "" __depend_target_name ${__ldflag})
+            if(TARGET ${__depend_target_name})
+                #message("---- ${target} depends on  ${__depend_target_name}")
+                add_dependencies(${target} ${__depend_target_name})
+            endif()
         endforeach()
+        unset(_split_ldflags)
     endif()
-
-    unset(_split_ldflags)
+    
     unset(_pods_pkg_include_flags)
     unset(_pods_pkg_ldflags)
 endmacro()
